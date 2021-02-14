@@ -10,23 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a14b0d1d-ac3f-4915-bdc9-1899756b226a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dtos/ActorDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dtos/MovieDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Actor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/facades/ActorFacade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/rest/ActorResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dtos/RenameMeDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/RenameMe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/facades/FacadeExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/facades/MovieFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/facades/Populator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/facades/Populator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rest/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rest/ApplicationConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rest/RenameMeResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rest/MovieResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Utility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/facades/FacadeExampleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/facades/MovieFacadeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/rest/RenameMeResourceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/rest/MovieResourceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/facades/ActorFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/facades/ActorFacade.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +197,7 @@
       <option name="presentableId" value="Default" />
       <updated>1613318618590</updated>
       <workItem from="1613318621963" duration="34000" />
-      <workItem from="1613318662011" duration="6857000" />
+      <workItem from="1613318662011" duration="7159000" />
     </task>
     <servers />
   </component>
