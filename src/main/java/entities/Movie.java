@@ -42,7 +42,6 @@ public class Movie implements Serializable {
     }
 
     public Movie() {
-
     }
 
     @Override

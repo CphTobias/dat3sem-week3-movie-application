@@ -11,7 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a14b0d1d-ac3f-4915-bdc9-1899756b226a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/rest/MovieResourceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/rest/MovieResourceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +75,7 @@
       <recent name="facades" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MovieFacadeTest">
+  <component name="RunManager" selected="JUnit.MovieResourceTest.testAddMovie (1)">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -86,80 +87,81 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MovieFacadeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MovieResourceTest.testAddMovie (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="devops-starter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="facades.*" />
+          <option name="PATTERN" value="rest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="facades" />
-      <option name="MAIN_CLASS_NAME" value="facades.MovieFacadeTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MovieFacadeTest.getAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="devops-starter" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="facades.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="facades" />
-      <option name="MAIN_CLASS_NAME" value="facades.MovieFacadeTest" />
-      <option name="METHOD_NAME" value="getAll" />
+      <option name="PACKAGE_NAME" value="rest" />
+      <option name="MAIN_CLASS_NAME" value="rest.MovieResourceTest" />
+      <option name="METHOD_NAME" value="testAddMovie" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MovieFacadeTest.getByActorName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MovieResourceTest.testAddMovie" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="devops-starter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="facades.*" />
+          <option name="PATTERN" value="rest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="facades" />
-      <option name="MAIN_CLASS_NAME" value="facades.MovieFacadeTest" />
-      <option name="METHOD_NAME" value="getByActorName" />
+      <option name="PACKAGE_NAME" value="rest" />
+      <option name="MAIN_CLASS_NAME" value="rest.MovieResourceTest" />
+      <option name="METHOD_NAME" value="testAddMovie(entities.Movie)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MovieFacadeTest.getById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MovieResourceTest.testGetActorByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="devops-starter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="facades.*" />
+          <option name="PATTERN" value="rest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="facades" />
-      <option name="MAIN_CLASS_NAME" value="facades.MovieFacadeTest" />
-      <option name="METHOD_NAME" value="getById" />
+      <option name="PACKAGE_NAME" value="rest" />
+      <option name="MAIN_CLASS_NAME" value="rest.MovieResourceTest" />
+      <option name="METHOD_NAME" value="testGetActorByName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MovieFacadeTest.getByTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MovieResourceTest.testGetById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="devops-starter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="facades.*" />
+          <option name="PATTERN" value="rest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="facades" />
-      <option name="MAIN_CLASS_NAME" value="facades.MovieFacadeTest" />
-      <option name="METHOD_NAME" value="getByTitle" />
+      <option name="PACKAGE_NAME" value="rest" />
+      <option name="MAIN_CLASS_NAME" value="rest.MovieResourceTest" />
+      <option name="METHOD_NAME" value="testGetById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MovieResourceTest.testGetByTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="devops-starter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="rest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="rest" />
+      <option name="MAIN_CLASS_NAME" value="rest.MovieResourceTest" />
+      <option name="METHOD_NAME" value="testGetByTitle" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -255,19 +257,19 @@
     </configuration>
     <list>
       <item itemvalue="Tomcat Server.Tomcat 9.0.41" />
-      <item itemvalue="JUnit.MovieFacadeTest.getAll" />
-      <item itemvalue="JUnit.MovieFacadeTest.getByActorName" />
-      <item itemvalue="JUnit.MovieFacadeTest" />
-      <item itemvalue="JUnit.MovieFacadeTest.getByTitle" />
-      <item itemvalue="JUnit.MovieFacadeTest.getById" />
+      <item itemvalue="JUnit.MovieResourceTest.testGetByTitle" />
+      <item itemvalue="JUnit.MovieResourceTest.testGetById" />
+      <item itemvalue="JUnit.MovieResourceTest.testGetActorByName" />
+      <item itemvalue="JUnit.MovieResourceTest.testAddMovie" />
+      <item itemvalue="JUnit.MovieResourceTest.testAddMovie (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MovieFacadeTest" />
-        <item itemvalue="JUnit.MovieFacadeTest.getById" />
-        <item itemvalue="JUnit.MovieFacadeTest.getByTitle" />
-        <item itemvalue="JUnit.MovieFacadeTest.getByActorName" />
-        <item itemvalue="JUnit.MovieFacadeTest.getAll" />
+        <item itemvalue="JUnit.MovieResourceTest.testAddMovie (1)" />
+        <item itemvalue="JUnit.MovieResourceTest.testAddMovie" />
+        <item itemvalue="JUnit.MovieResourceTest.testGetActorByName" />
+        <item itemvalue="JUnit.MovieResourceTest.testGetById" />
+        <item itemvalue="JUnit.MovieResourceTest.testGetByTitle" />
       </list>
     </recent_temporary>
   </component>
@@ -282,7 +284,7 @@
       <workItem from="1613318621963" duration="34000" />
       <workItem from="1613318662011" duration="8331000" />
       <workItem from="1613340245114" duration="34000" />
-      <workItem from="1613379813806" duration="7294000" />
+      <workItem from="1613379813806" duration="18646000" />
     </task>
     <servers />
   </component>
