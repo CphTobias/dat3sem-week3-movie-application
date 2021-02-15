@@ -3,6 +3,8 @@ package facades;
 import dtos.MovieDTO;
 import entities.Movie;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.TypedQuery;
@@ -66,11 +68,13 @@ public class MovieFacade {
         List<Movie> movies = em.createNamedQuery("Movie.getAll", Movie.class).getResultList();
         return MovieDTO.getFromList(movies);
     }
-    
-    public static void main(String[] args) {
-        emf = EMF_Creator.createEntityManagerFactory();
-        MovieFacade fe = getMovieFacade(emf);
-        fe.getAll().forEach(dto->System.out.println(dto));
-    }
 
+    public List<MovieDTO> getByActorName(String actorName){
+        EntityManager em = getEntityManager();
+        List<Movie> movies = em.createQuery("SELECT m FROM Movie m", Movie.class).getResultList();
+        List<Movie> filteredMovies = movies.stream().filter(movie -> movie.getActors().stream()
+            .anyMatch(actor -> actor.getName().equals(actorName)))
+            .collect(Collectors.toList());
+        return MovieDTO.getFromList(filteredMovies);
+    }
 }

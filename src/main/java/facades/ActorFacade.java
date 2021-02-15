@@ -66,11 +66,4 @@ public class ActorFacade {
         List<Actor> actors = em.createQuery("SELECT a FROM Actor a", Actor.class).getResultList();
         return actors;
     }
-
-    public static void main(String[] args) {
-        emf = EMF_Creator.createEntityManagerFactory();
-        ActorFacade fe = getActorFacade(emf);
-        fe.getAll().forEach(dto->System.out.println(dto));
-    }
-
 }

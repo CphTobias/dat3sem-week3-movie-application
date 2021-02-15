@@ -57,5 +57,13 @@ public class MovieResource {
         return Response.ok(GSON.toJson(movieDTO)).build();
     }
 
+    @GET
+    @Path("/actor/{actorName}")
+    public Response getByActorName(
+        @PathParam("actorName") String actorName
+    ) {
+        List<MovieDTO> movieDTOS = FACADE.getByActorName(actorName);
+        return Response.ok(GSON.toJson(movieDTOS)).build();
+    }
 
 }
