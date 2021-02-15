@@ -1,23 +1,20 @@
 package rest;
 
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.hasItems;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.Matchers.hasEntry;
+import static org.hamcrest.Matchers.hasItem;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import dtos.ActorDTO;
-import dtos.MovieDTO;
 import entities.Actor;
 import entities.Movie;
-import io.restassured.http.ContentType;
-import java.util.ArrayList;
-import java.util.List;
-import org.hamcrest.Matchers;
-import org.junit.jupiter.api.AfterEach;
-import utils.EMF_Creator;
 import io.restassured.RestAssured;
-
-import static io.restassured.RestAssured.given;
-
 import io.restassured.parsing.Parser;
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.ws.rs.core.UriBuilder;
@@ -25,19 +22,12 @@ import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.grizzly.http.util.HttpStatus;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
-
-import static io.restassured.RestAssured.when;
-import static org.hamcrest.CoreMatchers.hasItems;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasEntry;
-import static org.hamcrest.Matchers.hasItem;
-import static org.hamcrest.Matchers.hasItemInArray;
-
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import utils.EMF_Creator;
 //Uncomment the line below, to temporarily disable this test
 //@Disabled
 
@@ -179,10 +169,20 @@ public class MovieResourceTest {
             .get("/movie/actor/{name}")
             .then()
             .assertThat()
-            .log().body()
             .statusCode(HttpStatus.OK_200.getStatusCode())
             .body("size()", is(2))
             .body("actors.name[0]", hasItem("Bob1"));
+    }
+
+    @Test
+    public void testGetCount() throws Exception {
+        given()
+            .when()
+            .get("/movie/count")
+            .then()
+            .assertThat()
+            .statusCode(HttpStatus.OK_200.getStatusCode())
+            .body("count", is(2));
     }
 
     @Test

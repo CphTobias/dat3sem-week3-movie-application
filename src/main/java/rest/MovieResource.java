@@ -51,6 +51,13 @@ public class MovieResource {
         return Response.ok(GSON.toJson(movieDTO)).build();
     }
 
+    @GET
+    @Path("/count")
+    public String getCount() {
+        long count = FACADE.getCurrentAmount();
+        return "{\"count\":"+count+"}";
+    }
+
     @POST
     public Response addMovie(Movie movie) {
         MovieDTO movieDTO = FACADE.addMovie(movie);

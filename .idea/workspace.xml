@@ -11,6 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a14b0d1d-ac3f-4915-bdc9-1899756b226a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/facades/MovieFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/facades/MovieFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rest/MovieResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rest/MovieResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +75,7 @@
       <recent name="facades" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MovieResourceTest.testAddMovie (1)">
+  <component name="RunManager" selected="JUnit.MovieResourceTest.testGetById">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -149,7 +151,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MovieResourceTest.testGetByTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MovieResourceTest.testGetCount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="devops-starter" />
       <extension name="coverage">
         <pattern>
@@ -159,7 +161,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="rest" />
       <option name="MAIN_CLASS_NAME" value="rest.MovieResourceTest" />
-      <option name="METHOD_NAME" value="testGetByTitle" />
+      <option name="METHOD_NAME" value="testGetCount" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -255,19 +257,19 @@
     </configuration>
     <list>
       <item itemvalue="Tomcat Server.Tomcat 9.0.41" />
-      <item itemvalue="JUnit.MovieResourceTest.testGetByTitle" />
       <item itemvalue="JUnit.MovieResourceTest.testGetById" />
       <item itemvalue="JUnit.MovieResourceTest.testGetActorByName" />
       <item itemvalue="JUnit.MovieResourceTest.testAddMovie" />
       <item itemvalue="JUnit.MovieResourceTest.testAddMovie (1)" />
+      <item itemvalue="JUnit.MovieResourceTest.testGetCount" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MovieResourceTest.testGetById" />
+        <item itemvalue="JUnit.MovieResourceTest.testGetCount" />
         <item itemvalue="JUnit.MovieResourceTest.testAddMovie (1)" />
         <item itemvalue="JUnit.MovieResourceTest.testAddMovie" />
         <item itemvalue="JUnit.MovieResourceTest.testGetActorByName" />
-        <item itemvalue="JUnit.MovieResourceTest.testGetById" />
-        <item itemvalue="JUnit.MovieResourceTest.testGetByTitle" />
       </list>
     </recent_temporary>
   </component>
@@ -282,7 +284,7 @@
       <workItem from="1613318621963" duration="34000" />
       <workItem from="1613318662011" duration="8331000" />
       <workItem from="1613340245114" duration="34000" />
-      <workItem from="1613379813806" duration="19443000" />
+      <workItem from="1613379813806" duration="20844000" />
     </task>
     <servers />
   </component>
