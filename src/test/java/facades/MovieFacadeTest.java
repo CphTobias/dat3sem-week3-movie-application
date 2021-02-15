@@ -95,7 +95,6 @@ public class MovieFacadeTest {
     void addMovie() {
         Movie movie = new Movie(1998, "Add me", actorList, 900);
         MovieDTO movieDTO = facade.addMovie(movie);
-        assertEquals(4, movieDTO.getId());
         assertEquals(movie.getTitle(), movieDTO.getTitle());
         assertEquals(movie.getYear(), movieDTO.getYear());
     }
