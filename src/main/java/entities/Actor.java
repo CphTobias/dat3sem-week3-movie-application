@@ -10,6 +10,7 @@ import javax.persistence.NamedQuery;
 
 @Entity
 @NamedQueries({
+    @NamedQuery(name = "Actor.deleteAllRows", query = "DELETE from Actor"),
     @NamedQuery(name = "Actor.getAll" ,query = "SELECT a FROM Actor a")
 })
 public class Actor {

@@ -1,12 +1,20 @@
 package facades;
 
+import dtos.ActorDTO;
+import dtos.MovieDTO;
+import entities.Actor;
 import entities.Movie;
+import java.util.ArrayList;
+import java.util.List;
 import utils.EMF_Creator;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,50 +23,96 @@ import org.junit.jupiter.api.Test;
 //@Disabled
 public class MovieFacadeTest {
 
-//    private static EntityManagerFactory emf;
-//    private static MovieFacade facade;
-//
-//    public MovieFacadeTest() {
-//    }
-//
-//    @BeforeAll
-//    public static void setUpClass() {
-//       emf = EMF_Creator.createEntityManagerFactoryForTest();
-//       facade = MovieFacade.getMovieFacade(emf);
-//    }
-//
-//    @AfterAll
-//    public static void tearDownClass() {
-////        Clean up database after test is done or use a persistence unit with drop-and-create to start up clean on every test
-//    }
-//
-//    // Setup the DataBase in a known state BEFORE EACH TEST
-//    //TODO -- Make sure to change the code below to use YOUR OWN entity class
-//    @BeforeEach
-//    public void setUp() {
-//        EntityManager em = emf.createEntityManager();
-//        try {
-//            em.getTransaction().begin();
-//            em.createNamedQuery("RenameMe.deleteAllRows").executeUpdate();
-//            em.persist(new Movie("Some txt", "More text"));
-//            em.persist(new Movie("aaa", "bbb"));
-//
-//            em.getTransaction().commit();
-//        } finally {
-//            em.close();
-//        }
-//    }
-//
-//    @AfterEach
-//    public void tearDown() {
-////        Remove any data after each test was run
-//    }
-//
-//    // TODO: Delete or change this method
-//    @Test
-//    public void testAFacadeMethod() {
-//        assertEquals(2, facade.getRenameMeCount(), "Expects two rows in the database");
-//    }
-    
+    private static EntityManagerFactory emf;
+    private static MovieFacade facade;
+    Movie movie1;
+    Movie movie2;
+    Movie movie3;
+    List<Actor> actorList;
 
+    public MovieFacadeTest() {
+    }
+
+    @BeforeAll
+    public static void setUpClass() {
+        emf = EMF_Creator.createEntityManagerFactoryForTest();
+        facade = MovieFacade.getMovieFacade(emf);
+    }
+
+    @BeforeEach
+    public void setUp() {
+        EntityManager em = emf.createEntityManager();
+        Actor actor1 = new Actor("Bob1", 18);
+        Actor actor2 = new Actor("Bob2", 21);
+        Actor actor3 = new Actor("Bob3", 30);
+        actorList = new ArrayList<>();
+        try {
+            em.getTransaction().begin();
+            em.persist(actor1);
+            em.persist(actor2);
+            em.persist(actor3);
+            actorList.add(actor1);
+            actorList.add(actor2);
+            actorList.add(actor3);
+            movie1 = new Movie(2001, "First movie", actorList, 333333);
+            movie2 = new Movie(2003, "Second movie", actorList, 444444);
+            movie3 = new Movie(2002, "Third movie", actorList, 555555);
+            em.persist(movie1);
+            em.persist(movie2);
+            em.persist(movie3);
+            em.getTransaction().commit();
+        } finally {
+            em.close();
+        }
+    }
+
+    @AfterEach
+    public void tearDown() {
+        EntityManager em = emf.createEntityManager();
+        try {
+            em.getTransaction().begin();
+            em.createNamedQuery("Movie.deleteAllRows").executeUpdate();
+            em.createNamedQuery("Actor.deleteAllRows").executeUpdate();
+            em.getTransaction().commit();
+        } finally {
+            em.close();
+        }
+    }
+
+    @Test
+    void getByTitle() {
+        MovieDTO movieDTO = facade.getByTitle("Second movie");
+        assertEquals("Second movie", movieDTO.getTitle());
+    }
+
+    @Test
+    void getById() {
+        MovieDTO movieDTO = facade.getById(movie1.getId());
+        assertEquals(movie1.getId(), movieDTO.getId());
+    }
+
+    @Test
+    void addMovie() {
+        Movie movie = new Movie(1998, "Add me", actorList, 900);
+        MovieDTO movieDTO = facade.addMovie(movie);
+        assertEquals(4, movieDTO.getId());
+        assertEquals(movie.getTitle(), movieDTO.getTitle());
+        assertEquals(movie.getYear(), movieDTO.getYear());
+    }
+
+    @Test
+    void getAll() {
+        List<MovieDTO> movieDTOS = facade.getAll();
+        assertEquals(3, movieDTOS.toArray().length);
+    }
+
+    @Test
+    void getByActorName() {
+        List<MovieDTO> movieDTOS = facade.getByActorName("Bob1");
+        movieDTOS.forEach(movie -> {
+            boolean foundActor = movie.getActors().stream()
+                .anyMatch(actor -> actor.getName().equals("Bob1"));
+            assertTrue(foundActor);
+        });
+    }
 }
