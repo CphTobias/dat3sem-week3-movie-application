@@ -51,11 +51,11 @@ public class MovieFacade {
         return new MovieDTO(movie);
     }
 
-    public MovieDTO getByTitle(String title){
+    public List<MovieDTO> getByTitle(String title){
         EntityManager em = getEntityManager();
-        return new MovieDTO(em.createNamedQuery("Movie.getByTitle", Movie.class)
+        return MovieDTO.getFromList(em.createNamedQuery("Movie.getByTitle", Movie.class)
             .setParameter("title", title)
-            .getSingleResult());
+            .getResultList());
     }
 
     public long getCurrentAmount(){

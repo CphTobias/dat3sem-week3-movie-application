@@ -2,6 +2,7 @@ package dtos;
 
 import entities.Actor;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import javax.persistence.Column;
 
@@ -36,6 +37,23 @@ public class ActorDTO {
             ", name='" + name + '\'' +
             ", age=" + age +
             '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ActorDTO)) {
+            return false;
+        }
+        ActorDTO actorDTO = (ActorDTO) o;
+        return getAge() == actorDTO.getAge() && getId().equals(actorDTO.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getName(), getAge());
     }
 
     public Long getId() {

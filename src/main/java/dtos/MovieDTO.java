@@ -1,18 +1,16 @@
 package dtos;
 
-import entities.Actor;
 import entities.Movie;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
-import javax.persistence.OneToMany;
 
 public class MovieDTO {
 
     private long id;
     private int year;
     private String title;
-    private List<Actor> actors;
+    private List<ActorDTO> actors;
 
     public static List<MovieDTO> getFromList(List<Movie> movies) {
         return movies.stream().
@@ -20,7 +18,7 @@ public class MovieDTO {
             collect(Collectors.toList());
     }
 
-    public MovieDTO(long id, int year, String title, List<Actor> actors) {
+    public MovieDTO(long id, int year, String title, List<ActorDTO> actors) {
         this.id = id;
         this.year = year;
         this.title = title;
@@ -31,7 +29,7 @@ public class MovieDTO {
         this.id = movie.getId();
         this.year = movie.getYear();
         this.title = movie.getTitle();
-        this.actors = movie.getActors();
+        this.actors = ActorDTO.getFromList(movie.getActors());
     }
 
     @Override
@@ -42,6 +40,23 @@ public class MovieDTO {
             ", title='" + title + '\'' +
             ", actors=" + actors +
             '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MovieDTO)) {
+            return false;
+        }
+        MovieDTO movieDTO = (MovieDTO) o;
+        return getId() == movieDTO.getId() && Objects.equals(getActors(), movieDTO.getActors());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getActors());
     }
 
     public long getId() {
@@ -68,11 +83,11 @@ public class MovieDTO {
         this.title = title;
     }
 
-    public List<Actor> getActors() {
+    public List<ActorDTO> getActors() {
         return actors;
     }
 
-    public void setActors(List<Actor> actors) {
+    public void setActors(List<ActorDTO> actors) {
         this.actors = actors;
     }
 }

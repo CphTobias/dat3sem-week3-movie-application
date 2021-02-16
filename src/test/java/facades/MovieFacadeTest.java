@@ -81,8 +81,8 @@ public class MovieFacadeTest {
 
     @Test
     void getByTitle() {
-        MovieDTO movieDTO = facade.getByTitle("Second movie");
-        assertEquals("Second movie", movieDTO.getTitle());
+        List<MovieDTO> movieDTOS = facade.getByTitle("Second movie");
+        movieDTOS.forEach(movie -> assertTrue(movie.getTitle().contains("Second movie")));
     }
 
     @Test

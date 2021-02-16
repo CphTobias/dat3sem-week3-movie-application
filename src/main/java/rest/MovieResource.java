@@ -38,8 +38,8 @@ public class MovieResource {
     public Response getByTitle(
         @PathParam("title") String title
     ) {
-        MovieDTO movieDTO = FACADE.getByTitle(title);
-        return Response.ok(GSON.toJson(movieDTO)).build();
+        List<MovieDTO> movieDTOS = FACADE.getByTitle(title);
+        return Response.ok(GSON.toJson(movieDTOS)).build();
     }
 
     @GET
@@ -61,7 +61,7 @@ public class MovieResource {
     @POST
     public Response addMovie(Movie movie) {
         MovieDTO movieDTO = FACADE.addMovie(movie);
-        return Response.ok(GSON.toJson(movieDTO)).build();
+        return Response.status(201).entity(GSON.toJson(movieDTO)).build();
     }
 
     @GET

@@ -1,13 +1,19 @@
 package rest;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.hasEntry;
 import static org.hamcrest.Matchers.hasItem;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import dtos.ActorDTO;
+import dtos.MovieDTO;
 import entities.Actor;
 import entities.Movie;
 import io.restassured.RestAssured;
@@ -36,9 +42,7 @@ public class MovieResourceTest {
     private static final int SERVER_PORT = 7777;
     private static final String SERVER_URL = "http://localhost/api";
     private static Movie movie1, movie2;
-    Actor actor1;
-    Actor actor2;
-    Actor actor3;
+    Actor actor1, actor2, actor3;
     List<Actor> actorList;
 
     static final URI BASE_URI = UriBuilder.fromUri(SERVER_URL).port(SERVER_PORT).build();
@@ -126,27 +130,35 @@ public class MovieResourceTest {
 
     @Test
     public void testGetAllMovies() throws Exception {
-        given()
+        List<MovieDTO> movies;
+        movies = given()
+            .contentType("application/json")
             .when()
             .get("/movie/")
             .then()
-            .assertThat()
-            .statusCode(HttpStatus.OK_200.getStatusCode())
-            .body("size()", is(2))
-            .body("title", hasItems(movie1.getTitle(), movie2.getTitle()))
-            .body("actors[0].name", hasItems(actor1.getName(), actor2.getName(), actor3.getName()));
+            .extract().body().jsonPath().getList(".", MovieDTO.class);
+
+        MovieDTO m1DTO = new MovieDTO(movie1);
+        MovieDTO m2DTO = new MovieDTO(movie2);
+
+        assertThat(movies, containsInAnyOrder(m1DTO, m2DTO));
     }
 
     @Test
     public void testGetByTitle() throws Exception {
-        given()
+        List<MovieDTO> moviesWithTitle;
+        moviesWithTitle = given()
+            .contentType("application/json")
             .pathParam("title", movie2.getTitle())
             .when()
             .get("/movie/title/{title}")
             .then()
-            .assertThat()
             .statusCode(HttpStatus.OK_200.getStatusCode())
-            .body("", hasEntry("title", movie2.getTitle()));
+            .extract().body().jsonPath().getList(".", MovieDTO.class);
+
+        MovieDTO m2DTO = new MovieDTO(movie2);
+
+        assertThat(moviesWithTitle, contains(m2DTO));
     }
 
     @Test
@@ -158,7 +170,7 @@ public class MovieResourceTest {
             .then()
             .assertThat()
             .statusCode(HttpStatus.OK_200.getStatusCode())
-            .body("", hasEntry("title", movie1.getTitle()));
+            .body("title", equalTo(movie1.getTitle()));
     }
 
     @Test
@@ -197,8 +209,7 @@ public class MovieResourceTest {
             .post("/movie/")
             .then()
             .assertThat()
-            .statusCode(HttpStatus.OK_200.getStatusCode())
-            .log().body()
-            .body("", hasEntry("title", "Test"));
+            .statusCode(HttpStatus.CREATED_201.getStatusCode())
+            .body("title", equalTo("Test"));
     }
 }
