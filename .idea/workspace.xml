@@ -10,13 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a14b0d1d-ac3f-4915-bdc9-1899756b226a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dtos/ActorDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dtos/ActorDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dtos/MovieDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dtos/MovieDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/facades/MovieFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/facades/MovieFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rest/MovieResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rest/MovieResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/facades/MovieFacadeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/facades/MovieFacadeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/rest/MovieResourceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/rest/MovieResourceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -63,6 +61,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -79,14 +78,16 @@
       <recent name="facades" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MovieResourceTest.testGetByTitle">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.41">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -260,12 +261,12 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Tomcat Server.Tomcat 9.0.41" />
       <item itemvalue="JUnit.MovieResourceTest.testGetAllMovies" />
       <item itemvalue="JUnit.MovieResourceTest.testGetAllV2" />
       <item itemvalue="JUnit.MovieFacadeTest.getByTitle" />
       <item itemvalue="JUnit.MovieResourceTest.testGetById" />
       <item itemvalue="JUnit.MovieResourceTest.testGetByTitle" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.41" />
     </list>
     <recent_temporary>
       <list>
@@ -290,7 +291,8 @@
       <workItem from="1613340245114" duration="34000" />
       <workItem from="1613379813806" duration="21243000" />
       <workItem from="1613468981367" duration="625000" />
-      <workItem from="1613478109870" duration="10047000" />
+      <workItem from="1613478109870" duration="11085000" />
+      <workItem from="1613664983097" duration="6511000" />
     </task>
     <servers />
   </component>
