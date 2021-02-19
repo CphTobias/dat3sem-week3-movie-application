@@ -10,8 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a14b0d1d-ac3f-4915-bdc9-1899756b226a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/createMovie.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
     </list>
@@ -79,15 +78,13 @@
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.41">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -292,7 +289,8 @@
       <workItem from="1613379813806" duration="21243000" />
       <workItem from="1613468981367" duration="625000" />
       <workItem from="1613478109870" duration="11085000" />
-      <workItem from="1613664983097" duration="6511000" />
+      <workItem from="1613664983097" duration="7043000" />
+      <workItem from="1613722323928" duration="8698000" />
     </task>
     <servers />
   </component>
