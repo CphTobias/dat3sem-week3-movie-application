@@ -10,9 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a14b0d1d-ac3f-4915-bdc9-1899756b226a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/createMovie.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,7 +289,7 @@
       <workItem from="1613468981367" duration="625000" />
       <workItem from="1613478109870" duration="11085000" />
       <workItem from="1613664983097" duration="7043000" />
-      <workItem from="1613722323928" duration="8698000" />
+      <workItem from="1613722323928" duration="9400000" />
     </task>
     <servers />
   </component>
